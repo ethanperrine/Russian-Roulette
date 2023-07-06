@@ -34,7 +34,6 @@ namespace RussianRoulette
                     else
                     {
                         KillServiceHostProcess();
-                        Console.ReadLine();
                     }
                 }
                 else if (modeSelected == 2)
@@ -53,7 +52,6 @@ namespace RussianRoulette
                     else
                     {
                         KillServiceHostProcess();
-                        Console.ReadLine();
                     }
                 }
                 else
