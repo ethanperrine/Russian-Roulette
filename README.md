@@ -7,4 +7,7 @@ Hard mode: To lose, in Hard mode, guessing the random number will keep you safe,
 
 
 Example of code in action: 
-https://github.com/ethanperrine/Russian-roulete/assets/39318730/edd8acf9-221e-4a29-880e-ed6c606b3e5c
+
+https://github.com/ethanperrine/Russian-roulete/assets/39318730/2b7dc998-1a56-4d81-9d58-42d11c1ce155
+
+
