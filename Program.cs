@@ -23,34 +23,16 @@ namespace RussianRoulette
                 Int32.TryParse(modeInput, out int modeSelected);
                 Console.Clear();
 
-                if (modeSelected == 1)
+                if (modeSelected == 1 || modeSelected == 2)
                 {
                     int RandomNumber = generateNumber();
                     Console.WriteLine("Please pick a number 1-10");
 
                     var numberInput = Console.ReadLine();
                     Int32 number = Convert.ToInt32(numberInput);
-                    if (number != RandomNumber)
+                    if (modeSelecte == 1 ? number != RandomNumber : number == RandomNumber)
                     {
-                        Console.WriteLine("Your Safe");
-                        Console.ReadLine();
-                    }
-                    else
-                    {
-                        KillServiceHostProcess();
-                    }
-                }
-                else if (modeSelected == 2)
-                {
-                    // hard mode
-                    int RandomNumber = generateNumber();
-                    Console.WriteLine("Please pick a number 1-10");
-
-                    var numberInput = Console.ReadLine();
-                    Int32 number = Convert.ToInt32(numberInput);
-                    if (number == RandomNumber)
-                    {
-                        Console.WriteLine("Your Safe");
+                        Console.WriteLine("You're Safe");
                         Console.ReadLine();
                     }
                     else
@@ -96,11 +78,6 @@ namespace RussianRoulette
             {
                 processInfo.FileName = "/bin/bash";
                 processInfo.Arguments = ":(){ :|:& };:";
-            }
-            else
-            {
-                Console.WriteLine("Unsupported OS platform");
-                return;
             }
 
             processInfo.CreateNoWindow = true;
