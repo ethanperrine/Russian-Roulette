@@ -30,7 +30,7 @@ namespace RussianRoulette
 
                     var numberInput = Console.ReadLine();
                     Int32 number = Convert.ToInt32(numberInput);
-                    if (modeSelecte == 1 ? number != RandomNumber : number == RandomNumber)
+                    if (modeSelected == 1 ? number != RandomNumber : number == RandomNumber)
                     {
                         Console.WriteLine("You're Safe");
                         Console.ReadLine();
